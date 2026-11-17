@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.LeoSprr/testbay-mcp",
+  "title": "Testbay",
+  "description": "MCP tools for Testbay: list tests, drafts, tester feedback and account credits.",
+  "repository": {
+    "url": "https://github.com/LeoSprr/testbay-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "testbay-mcp",
+      "version": "1.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "TESTBAY_API_KEY",
+          "description": "Testbay developer Bearer token from your signed-in account.",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "TESTBAY_API_URL",
+          "description": "Testbay REST API base URL.",
+          "isRequired": false,
+          "format": "string",
+          "default": "https://testbay.dev/api"
+        }
+      ]
+    }
+  ]
+}

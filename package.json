@@ -1,0 +1,49 @@
+{
+  "name": "testbay-mcp",
+  "version": "1.0.0",
+  "mcpName": "io.github.LeoSprr/testbay-mcp",
+  "description": "Official Model Context Protocol server for Testbay — list tests, read feedback, create drafts and check account credits.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "testbay-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    ".env.example",
+    "smithery.yaml",
+    "server.json"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "tsx --test test/*.test.ts",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "tsx": "^4.20.0",
+    "typescript": "~5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeoSprr/testbay-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "testbay",
+    "user-testing",
+    "qa"
+  ]
+}

@@ -1,0 +1,28 @@
+# Smithery.ai build and scan configuration for @testbay/mcp
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    additionalProperties: false
+    properties:
+      testbayApiKey:
+        type: string
+        description: Testbay developer API key (Bearer token).
+      testbayApiUrl:
+        type: string
+        description: Testbay REST API base URL.
+        default: https://testbay.dev/api
+    required:
+      - testbayApiKey
+  commandFunction: |-
+    (config) => ({
+      command: "node",
+      args: ["dist/index.js"],
+      env: {
+        TESTBAY_API_KEY: config.testbayApiKey,
+        ...(config.testbayApiUrl ? { TESTBAY_API_URL: config.testbayApiUrl } : {}),
+      },
+    })
+build:
+  dockerBuildPath: .
+  dockerfile: Dockerfile
