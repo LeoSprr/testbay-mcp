@@ -136,7 +136,7 @@ Publish this tree as the **standalone** repo [`LeoSprr/testbay-mcp`](https://git
 | Directory | What to do |
 | --- | --- |
 | [Smithery](https://smithery.ai) | Sign in with GitHub → connect `LeoSprr/testbay-mcp` (uses `smithery.yaml`). |
-| [MCP Registry](https://registry.modelcontextprotocol.io) | `npx @modelcontextprotocol/registry-cli mcp-publisher login github` then `mcp-publisher publish` in this repo (`server.json` + `mcpName` in `package.json`). Requires **npm publish** of `testbay-mcp` first (registry verifies package ownership). |
+| [MCP Registry](https://registry.modelcontextprotocol.io) | Install the Go CLI: `brew install mcp-publisher` (not an npm package). Then `mcp-publisher login github` and `mcp-publisher publish`. Requires **npm publish** of `testbay-mcp` first (registry verifies package ownership). |
 | [awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | PR adding a line in alphabetical order: `- [LeoSprr/testbay-mcp](https://github.com/LeoSprr/testbay-mcp) 📇 ☁️ 🏠 🍎 🪟 🐧 - Paid user-testing marketplace: list your tests, create drafts, read feedback and wallet via testbay.dev. \`npx -y testbay-mcp\`` |
 | [mcp.so](https://mcp.so) | Submit form with the GitHub repo URL and install command `npx -y testbay-mcp`. |
 | [Glama](https://glama.ai/mcp/servers) | On the public repo, set GitHub topics **`mcp`** and **`mcp-server`**; indexing is automatic within a few hours. |
