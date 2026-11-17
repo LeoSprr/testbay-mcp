@@ -129,6 +129,41 @@ Tool responses are JSON text in MCP `content`. Failures set `isError: true` with
 
 [`smithery.yaml`](smithery.yaml) configures automatic build and security scanning on [Smithery.ai](https://smithery.ai).
 
+## Show up in Cursor and agent libraries
+
+Agents discover MCP servers through directories, not Arcade-style remote URLs (unless you host HTTP yourself).
+
+### Cursor (fast path — community library)
+
+1. Ensure [LeoSprr/testbay-mcp](https://github.com/LeoSprr/testbay-mcp) has **`.mcp.json`** at the repo root (this repo).
+2. Open **[cursor.directory/plugins/new](https://cursor.directory/plugins/new)** → sign in with GitHub.
+3. Paste **`https://github.com/LeoSprr/testbay-mcp`** → Submit.
+4. An automated scan runs; when marked safe, the listing appears in **cursor.directory** and users can add it to Cursor.
+5. After install, set **`TESTBAY_API_KEY`** in Cursor’s MCP settings (never commit the token).
+
+### Cursor (official marketplace — slow)
+
+Hand-reviewed; mostly partners. Optional: [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish) with a public repo, MIT license, README + logo. Expect **weeks**, not hours.
+
+### OAuth / no API key (hosted Testbay MCP)
+
+For **sign-in in the browser** instead of `TESTBAY_API_KEY`, use Testbay’s hosted server:
+
+- URL: **`https://testbay.dev/mcp`**
+- Documented on [testbay.dev](https://testbay.dev) under MCP setup (Cursor “Add Testbay” deeplink).
+
+That endpoint is separate from this npm package; deploy the main Testbay app for it to work.
+
+### Other agents
+
+| Agent | How users find Testbay |
+| --- | --- |
+| Claude Desktop / many clients | [Official MCP Registry](https://registry.modelcontextprotocol.io) entry `io.github.LeoSprr/testbay-mcp` (already published) |
+| Glama | GitHub topics `mcp` + `mcp-server` on this repo |
+| mcp.so / awesome-mcp | Manual submit / PR |
+
+**Smithery** often expects a **running HTTP URL**, not a GitHub stdio repo — skip Smithery unless you deploy an HTTP transport.
+
 ## Directory listings
 
 Publish this tree as the **standalone** repo [`LeoSprr/testbay-mcp`](https://github.com/LeoSprr/testbay-mcp) (not inside the main Testbay app repo). Then:

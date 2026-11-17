@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "testbay": {
+      "command": "npx",
+      "args": ["-y", "testbay-mcp"],
+      "env": {
+        "TESTBAY_API_URL": "https://testbay.dev/api"
+      }
+    }
+  }
+}
